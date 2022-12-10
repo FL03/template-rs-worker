@@ -1,0 +1,34 @@
+name: Cloudflare Workers
+
+on:
+  push:
+    branches: [ "main", "master", "prod" ]
+    tags: [ "v*.*.*" ]
+  schedule:
+    - cron: "30 9 * * 5"
+  workflow_dispatch:
+    inputs:
+      publish:
+        default: true
+        description: 'Publish'
+        required: true
+        type: boolean
+
+jobs:
+  deploy:
+#     if: ${{ github.event.inputs.publish }}
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: publish
+          preCommands: |
+            curl https://sh.rustup.rs -sSf | bash -s -- -y
+            source "$HOME/.cargo/env"
+            rustup default nightly
+            rustup target add wasm32-unknown-unknown wasm32-wasi --toolchain nightly
+          workingDirectory: .

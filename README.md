@@ -1,17 +1,26 @@
-# template-workspace
+# template-rs-worker
 
-A barebones repository template for quickly setting up a proper workspace
+[![Clippy](https://github.com/FL03/template-rs-worker/actions/workflows/clippy.yml/badge.svg)](https://github.com/FL03/template-rs-worker/actions/workflows/clippy.yml)
+[![Docker](https://github.com/FL03/template-rs-worker/actions/workflows/docker.yml/badge.svg)](https://github.com/FL03/template-rs-worker/actions/workflows/docker.yml)
+[![Rust](https://github.com/FL03/template-rs-worker/actions/workflows/rust.yml/badge.svg)](https://github.com/FL03/template-rs-worker/actions/workflows/rust.yml)
+[![Workers](https://github.com/FL03/template-rs-worker/actions/workflows/workers.yml/badge.svg)](https://github.com/FL03/template-rs-worker/actions/workflows/workers.yml)
 
-## Installation
+***
+
+template-rs-worker 
+
+## Getting Started
+
+### Building from the source
 
 Start by cloning the repository
 
 ```bash
-git clone https://github.com/FL03/template-workspace
+git clone https://github.com/FL03/template-rs-worker
 
 ```
 
-## Usage
+### Usage
 
 ```rust
 
@@ -26,5 +35,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-* [Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)
-* [MIT](https://choosealicense.com/licenses/mit/)
+- [Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)
+- [MIT](https://choosealicense.com/licenses/mit/)
